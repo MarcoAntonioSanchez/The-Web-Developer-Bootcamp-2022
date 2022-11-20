@@ -6,4 +6,4 @@
 - Null
 - Undefined
 
-__*Technically there are two others: SYmbol and BigInit*__
+__*Technically there are two others:* Symbol and BigInit__

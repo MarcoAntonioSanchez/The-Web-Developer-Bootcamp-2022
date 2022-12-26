@@ -11,7 +11,7 @@
 // that side multiplied by 4.
 
 // Answer:
-square.area(10); //100
+square.area(10); //10000
 square.perimeter(10); //40
 
 const square = {

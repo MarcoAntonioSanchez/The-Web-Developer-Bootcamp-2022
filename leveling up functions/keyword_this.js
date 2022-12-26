@@ -38,6 +38,6 @@ meowCopy(); // " says meoooow"
 // By defining a function this get's added on a top level
 // object called "window."
 
-// The keyword this is referenced to the window. object
+// The keyword "this" is referenced to the "window."" object
 // this is why the manner of executing or calling a function matters
 // when treating methods

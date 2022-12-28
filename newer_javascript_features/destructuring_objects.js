@@ -34,19 +34,19 @@ const user = {
 // const firstName = user.firstName;
 // const lastName = user.lastName;
 
-// You can try deconstructuring the object to acces that attributes
+// You can try destructuring the object to acces that attributes
 // right away
-// Deconstructuring (single in them out) the email, firstName, lastName,
+// Destructuring (single in them out) the email, firstName, lastName,
 // city and bio's attributes from the user array
 const { email, firstName, lastName, city, bio } = user;
-// Calling out the values into this deconstructure attributes / variables
+// Calling out the values into this destructuring attributes / variables
 email; // harvey@gmail.com
 firstName; // Harvey
 lastName; // Milk
 city; // San Francisco
 bio; // Harvey Bernard Milk was an Amercian politician and the first openly gay worker into the public office
 
-// When you deconstructure an object you can assign new variables names
+// When you destructuring an object you can assign new variables names
 // for an specific attribute, like this:
 const { born: birthYear } = user;
 // born; // undefined
@@ -62,8 +62,8 @@ const user2 = {
   state: "Oklahoma",
 };
 
-// Deconstructuring the attributes from user2 array
-// Last deconstructure attribute is a default string to died variable
+// Destructuring the attributes from user2 array
+// Last destructuring attribute is a default string to died variable
 const { city: originCity, state, died = "N/A" } = user2;
 originCity; // Tulsa
 died; // N/A

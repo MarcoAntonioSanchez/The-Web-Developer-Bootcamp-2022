@@ -19,3 +19,27 @@ const catDog = { ...feline, ...canine };
 // so last argument will be the last over write
 const catDogCopy = { ...feline, ...canine, family: "Birded" };
 // {legs: 4, family: "Birded", Furry: true}
+
+// What would happen if we spread an array into an object?
+// {...[1, 2, 6, 8]};
+
+// The index is used as key and the arguments are used as values
+// to deliver a new object
+// Output: {0: 2, 1: 4, 2: 6, 3: 8}
+
+// Same would happens to the strings
+// {..."Hiii"};
+// Output: {0: H, 1: i, 2: i, 3: i}
+
+// Practical example of some object with user info.
+const dataFromFrom = {
+  email: "blueman@gmail.com",
+  password: "tobias123",
+  username: "tfunke",
+};
+
+// We can take the object's info contained in dataFromForm
+// and add new arguments while spread to copy the original object
+const newUser = { ...dataFromFrom, id: "2345", isAdmin: "false" };
+newUser;
+// Output: { email: "blueman@gmail.com", password: "tobias123", username: "tfunke", id: 2345, isAdmin: false}

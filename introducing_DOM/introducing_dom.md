@@ -8,12 +8,6 @@
 - It's your JS "windows" into the contents of a webpage.
 - It's just a bunch of objects that you can interact with via JS.
 
-```
-var add2 = function(number) {
-  return number + 2;
-}
-```
-
 HTML Structure:
 
 ```

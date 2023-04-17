@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Event Bubbling</title>
+  </head>
+  <body>
+    <h1>Event bubling</h1>
+
+    <!-- By nesting click events inside HTML elements
+    the click will trigger all events one behind the others.
+    This is called "Event Bubling".
+    
+    <section onclick="alert('Section clicked')">
+      <p onclick="alert('Paragraph clicked')">
+        I am a paragraph
+        <button onclick="alert('button clicked')">Click me</button>
+      </p>
+    </section>
+    -->
+
+    <div id="container">
+      Click The Hide
+      <button id="colorButton">Change Color</button>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

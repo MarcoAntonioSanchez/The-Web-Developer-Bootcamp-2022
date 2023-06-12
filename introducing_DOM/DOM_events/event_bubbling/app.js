@@ -1,4 +1,4 @@
-// Selecting and saving the elements to work woth into variables
+// Selecting and saving the elements to work with into variables
 const button = document.querySelector("#colorButton");
 const container = document.querySelector("#container");
 

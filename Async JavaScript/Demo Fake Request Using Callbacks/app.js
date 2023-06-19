@@ -20,6 +20,7 @@ const fakeRequestCallback = (url, success, failure) => {
     // Delay set as constant
   }, delay);
 };
+
 // THE PROMISE VERSION
 const fakeRequestPromise = (url) => {
   return new Promise((resolve, reject) => {
@@ -34,7 +35,7 @@ const fakeRequestPromise = (url) => {
   });
 };
 
-// Calling the fake request callback, passing the books.com/page1 for the 1st callback
+/* // Calling the fake request callback, passing the books.com/page1 for the 1st callback
 // The second argument passed is a function containing a response as well
 fakeRequestCallback("books.com/page1", function (response) {
   // Printing the it worked text on success
@@ -71,4 +72,54 @@ fakeRequestCallback("books.com/page1", function (response) {
 }),
   function (err) {
     console.log("Error!", err);
-  };
+  }; */
+
+// First fake request promise version
+/* fakeRequestPromise("yelp.com/api/coffee/page1")
+  .then(() => {
+    console.log("promise 1 resolved");
+    console.log("It worked!");
+    fakeRequestPromise("yelp.com/api/coffee/page2")
+      .then(() => {
+        console.log("promise 2 resolved");
+        console.log("It worked!");
+        fakeRequestPromise("yelp.com/api/coffee/page3")
+          .then(() => {
+            console.log("promise 3 resolved");
+            console.log("It worked!");
+          })
+          .catch(() => {
+            console.log("promise 3 rejected");
+            console.log("Ho no, error");
+          });
+      })
+      .catch(() => {
+        console.log("promise 2 rejected");
+        console.log("Ho no, error");
+      });
+  })
+  .catch(() => {
+    console.log("promise 1 rejected");
+    console.log("Ho no, error");
+  });
+ */
+
+// Refactored version
+fakeRequestPromise("yelp.com/api/coffee/page1")
+  .then((data) => {
+    console.log("It worked!, 1");
+    console.log(data);
+    return fakeRequestPromise("yelp.com/api/coffee/page2");
+  })
+  .then((data) => {
+    console.log("It worked!, 2");
+    console.log(data);
+    return fakeRequestPromise("yelp.com/api/coffee/page3").then((data) => {
+      console.log("It worked!, 3");
+      console.log(data);
+    });
+  })
+  .catch((err) => {
+    console.log("Ho no, the request failed");
+    console.log(err);
+  });
